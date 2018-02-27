@@ -27,7 +27,7 @@ module.exports = function makeExchange(currency) {
 
       if(currency >= 5){
         coins['N'] = Math.floor(currency/5);
-        currency = currencye % 5;
+        currency = currency % 5;
         };
 
       if(currency < 5 && currency > 0) {
