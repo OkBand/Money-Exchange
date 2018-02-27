@@ -38,9 +38,8 @@ module.exports = function makeExchange(currency) {
         coins = change;
         coinsObject['P'] = coins;
       };
+      return coinsObject;
     };
-    return coinsObject;
-};
 
 /*If the argument passed in is 0 or less, then the method should return an empty
 object. If the currency that you would like to exchange more than 10000 please
