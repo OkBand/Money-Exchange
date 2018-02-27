@@ -2,62 +2,43 @@
 module.exports = function makeExchange(currency) {
     // Return an object containing the minimum number of coins needed to make change
     var coinsObject = {
-      H: 0,
-      Q: 0,
-      D: 0,
-      N: 0,
-      P: 0,
-
+    if(currency > 10000) {
+      throw new Error {"You are rich, my friend! We don't have so much coins for exchange"};
     };
-
-    if(currency <= 0) {
-      return {};
-    }
-    else if(currency > 10000) {
-      return {error: "You are rich, my friend! We don't have so much coins for exchange"};
-    }
-    else {
+  };
       var coins = 0;
       var change = currency;
 
       if(change >= 50) {
         coins = Math.floor(change/50);
         change = change % 50;
-        coinsObject.H = coins;
+        coinsObject['H'] = coins;
       };
-	console.log(change);
-	console.log(coins);
 
-        if(change >= 25){
-        coins = Math.floor(coins + change/25);
+      if(change >= 25) {
+        coins = Math.floor(change/25);
         change = change % 25;
-        coinsObject.Q = coins;
+        coinsObject['Q'] = coins;
        };
 
-	console.log(change);
-	console.log(coins);
-
-       if(change >= 10){
-        coins = coins + change/10;
+      if(change >= 10){
+        coins = Math.floor(change/10)
         change = change % 10;
-        coinsObject.D = coins;
+        coinsObject['D'] = coins;
        };
 
-        if(change >= 5){
-        coins = coins + change/5;
+      if(change >= 5){
+        coins = Math.floor(change/5);
         change = change % 5;
-        coinsObject.N = coins;
+        coinsObject['N'] = coins;
         };
 
-        if(change < 5 && change > 0) {
-        coins = coins + change;
-        coinsObject.P = coins;
+      if(change < 5 && change > 0) {
+        coins = change;
+        coinsObject['P'] = coins;
       };
-
     };
-
     return coinsObject;
-
     };
 }
 
