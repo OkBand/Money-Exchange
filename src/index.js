@@ -5,7 +5,7 @@ module.exports = function makeExchange(currency) {
 
     if(currency > 10000) {
       coinsObject['error']= "You are rich, my friend! We don't have so much coins for exchange";
-    };
+    }
     else {
       var coins = 0;
       var change = currency;
