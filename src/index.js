@@ -6,7 +6,7 @@ module.exports = function makeExchange(currency) {
     if(currency > 10000) {
       throw new Error ("You are rich, my friend! We don't have so much coins for exchange");
     };
-    
+
       var coins = 0;
       var change = currency;
 
@@ -40,8 +40,7 @@ module.exports = function makeExchange(currency) {
       };
     };
     return coinsObject;
-    };
-}
+};
 
 /*If the argument passed in is 0 or less, then the method should return an empty
 object. If the currency that you would like to exchange more than 10000 please
