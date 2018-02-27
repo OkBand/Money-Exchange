@@ -1,11 +1,12 @@
 // PLEASE DON'T change function name
 module.exports = function makeExchange(currency) {
     // Return an object containing the minimum number of coins needed to make change
-    var coinsObject = {
+    var coinsObject = {};
+
     if(currency > 10000) {
-      throw new Error {"You are rich, my friend! We don't have so much coins for exchange"};
+      throw new Error ("You are rich, my friend! We don't have so much coins for exchange");
     };
-  };
+    
       var coins = 0;
       var change = currency;
 
